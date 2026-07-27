@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kontakty</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Lobster&display=swap"
+        rel="stylesheet"
+    >
+
+    <link href="./styles/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Původní logo je uložené přímo v HTML -->
+    <svg
+        class="svg-library"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+    >
+        <defs>
+            <linearGradient
+                id="pinkPurpleGradient"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="1"
+            >
+                <stop offset="0%" stop-color="#ff4fa3"/>
+                <stop offset="35%" stop-color="#ef3dba"/>
+                <stop offset="68%" stop-color="#a843df"/>
+                <stop offset="100%" stop-color="#7028c9"/>
+            </linearGradient>
+
+            <radialGradient
+                id="pinkPurpleBackground"
+                cx="38%"
+                cy="28%"
+                r="85%"
+            >
+                <stop offset="0%" stop-color="#f16ac1"/>
+                <stop offset="45%" stop-color="#b53bd1"/>
+                <stop offset="100%" stop-color="#6020a5"/>
+            </radialGradient>
+
+            <linearGradient
+                id="logoTextGradient"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="0"
+            >
+                <stop offset="0%" stop-color="#ffd5ed"/>
+                <stop offset="50%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#e9ceff"/>
+            </linearGradient>
+
+            <filter
+                id="logoShadow"
+                x="-30%"
+                y="-30%"
+                width="160%"
+                height="160%"
+            >
+                <feDropShadow
+                    dx="0"
+                    dy="12"
+                    stdDeviation="13"
+                    flood-color="#35104e"
+                    flood-opacity="0.5"
+                />
+            </filter>
+
+            <filter
+                id="textGlow"
+                x="-30%"
+                y="-50%"
+                width="160%"
+                height="200%"
+            >
+                <feGaussianBlur stdDeviation="5" result="blur"/>
+
+                <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+
+        <symbol id="chromaKissLogo" viewBox="0 0 700 500">
+
+            <!-- Hlavní tvar loga -->
+            <rect
+                x="35"
+                y="35"
+                width="630"
+                height="430"
+                rx="150"
+                fill="url(#pinkPurpleBackground)"
+                stroke="url(#pinkPurpleGradient)"
+                stroke-width="24"
+                filter="url(#logoShadow)"
+            />
+
+            <!-- Barevné kruhy -->
+            <circle
+                cx="160"
+                cy="150"
+                r="95"
+                fill="#ff63b7"
+                opacity="0.2"
+            />
+
+            <circle
+                cx="550"
+                cy="150"
+                r="105"
+                fill="#cd5cff"
+                opacity="0.2"
+            />
+
+            <circle
+                cx="520"
+                cy="380"
+                r="90"
+                fill="#ff4fa3"
+                opacity="0.16"
+            />
+
+            <circle
+                cx="175"
+                cy="370"
+                r="85"
+                fill="#8128d2"
+                opacity="0.22"
+            />
+
+            <!-- Hudební vlny -->
+            <g
+                fill="none"
+                stroke="#ffd9f0"
+                stroke-width="13"
+                stroke-linecap="round"
+                opacity="0.9"
+            >
+                <path d="M105 250 C145 205 180 205 220 250"/>
+                <path d="M480 250 C520 205 555 205 595 250"/>
+            </g>
+
+            <!-- Noty v logu -->
+            <g fill="#ffd9f0" opacity="0.9">
+                <circle cx="122" cy="185" r="13"/>
+                <rect x="130" y="125" width="10" height="62" rx="5"/>
+
+                <circle cx="565" cy="190" r="13"/>
+                <rect x="573" y="130" width="10" height="62" rx="5"/>
+            </g>
+
+            <!-- Nápis chromakiss -->
+            <text
+                x="350"
+                y="285"
+                text-anchor="middle"
+                fill="url(#logoTextGradient)"
+                stroke="#7620a9"
+                stroke-width="3"
+                paint-order="stroke"
+                font-family="Lobster, cursive"
+                font-size="128"
+                filter="url(#textGlow)"
+            >
+                chromakiss
+            </text>
+
+            <!-- Linka pod názvem -->
+            <path
+                d="M190 330 C280 365 420 365 510 330"
+                fill="none"
+                stroke="#ffd6ed"
+                stroke-width="10"
+                stroke-linecap="round"
+                opacity="0.85"
+            />
+
+            <!-- Hvězdičky v logu -->
+            <g fill="#ffe1f2">
+                <path d="M115 330l8 18 19 8-19 8-8 19-8-19-19-8 19-8z"/>
+                <path d="M585 325l8 18 19 8-19 8-8 19-8-19-19-8 19-8z"/>
+                <circle cx="155" cy="395" r="7"/>
+                <circle cx="545" cy="395" r="7"/>
+            </g>
+        </symbol>
+    </svg>
+
+    <!-- Dekorace kolem kontaktní karty -->
+    <div class="decorations" aria-hidden="true">
+
+        <!-- Původní loga -->
+        <svg
+            class="decor logo logo-left"
+            viewBox="0 0 700 500"
+        >
+            <use href="#chromaKissLogo"></use>
+        </svg>
+
+        <svg
+            class="decor logo logo-right"
+            viewBox="0 0 700 500"
+        >
+            <use href="#chromaKissLogo"></use>
+        </svg>
+
+        <!-- Hudební noty -->
+        <div class="decor notes notes-left">
+            ♪ ♫ ♬<br>
+            ♩ ♪ ♫<br>
+            ♬ ♫ ♪<br>
+            ♪ ♩ ♬
+        </div>
+
+        <div class="decor notes notes-right">
+            ♫ ♪ ♬<br>
+            ♪ ♩ ♫<br>
+            ♬ ♪ ♫<br>
+            ♩ ♫ ♪
+        </div>
+
+        <!-- Mikrofony -->
+        <div class="decor microphone mic-left">🎤</div>
+        <div class="decor microphone mic-right">🎤</div>
+
+        <!-- Černé kytary s hvězdami -->
+        <div class="decor guitar guitar-left">
+            <span>🎸</span>
+        </div>
+
+        <div class="decor guitar guitar-right">
+            <span>🎸</span>
+        </div>
+
+    </div>
+
+    <!-- Kontaktní karta -->
+    <main class="contact-card">
+        <h1>Kontakty<br>Chroma Kiss</h1>
+
+        <p class="subtitle">
+            Kontaktujte nás nebo nás sledujte na sociálních sítích.
+        </p>
+
+        <section class="contacts" aria-label="Kontaktní údaje">
+
+            <a
+                class="contact-link"
+                href="tel:+420552345727"
+                aria-label="Zavolat na číslo +420 552 345 727"
+            >
+                <div class="icon" aria-hidden="true">📞</div>
+
+                <div class="contact-text">
+                    <strong>Telefon</strong>
+                    <span>+420 552 345 727</span>
+                </div>
+            </a>
+
+            <a
+                class="contact-link"
+                href="mailto:Chroma.kiss@gmail.com"
+                aria-label="Napsat e-mail na adresu Chroma.kiss@gmail.com"
+            >
+                <div class="icon" aria-hidden="true">✉️</div>
+
+                <div class="contact-text">
+                    <strong>E-mail</strong>
+                    <span>Chroma.kiss@gmail.com</span>
+                </div>
+            </a>
+
+            <a
+                class="contact-link"
+                href="https://www.instagram.com/Chroma_kiss5/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Navštívit Instagram Chroma Kiss"
+            >
+                <div class="icon" aria-hidden="true">📸</div>
+
+                <div class="contact-text">
+                    <strong>Instagram</strong>
+                    <span>@Chroma_kiss5</span>
+                </div>
+            </a>
+
+            <a
+                class="contact-link"
+                href="https://www.facebook.com/Chroma_kiss"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Navštívit Facebook Chroma Kiss"
+            >
+                <div class="icon" aria-hidden="true">👥</div>
+
+                <div class="contact-text">
+                    <strong>Facebook</strong>
+                    <span>Chroma_kiss</span>
+                </div>
+            </a>
+
+            <a
+                class="contact-link"
+                href="https://www.youtube.com/results?search_query=Chroma+Kiss"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Vyhledat Chroma Kiss na YouTube"
+            >
+                <div class="icon" aria-hidden="true">▶️</div>
+
+                <div class="contact-text">
+                    <strong>YouTube</strong>
+                    <span>Chroma Kiss</span>
+                </div>
+            </a>
+
+        </section>
+
+        <footer>
+            &copy; 2026 Chroma Kiss
+        </footer>
+    </main>
+
+</body>
+</html>

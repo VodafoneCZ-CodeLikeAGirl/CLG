@@ -1,0 +1,29 @@
+img {
+    height: 300px;
+    width: 300px;
+   align-items: center;
+   justify-content: center;
+}
+.obrazek img {
+    height: 250px;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+}
+body {
+   background-color: lightblue;
+    flex-direction: row;
+    text-align: center;
+}
+ 
+.page {
+    border-right: 10vmin darkblue solid; min-height: 100vh;
+    border-left: 10vmin darkblue solid; min-height: 100vh ;
+}
+
+.obrazek {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

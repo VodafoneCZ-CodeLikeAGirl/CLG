@@ -1,0 +1,57 @@
+body, html {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightblue;
+    text-align: center;
+    border-right: 10vmin darkblue solid;
+    border-left: 10vmin darkblue solid;
+    margin: 0%;
+   padding: 0%;
+}
+
+.Frame img {
+    width: 200px;
+    height: 275px;
+    object-fit: contain;
+    margin-right: 32px;
+    align-items: center;
+    
+}
+
+.Frame {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Frame img {
+    width: 200px;
+    height: 325px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.Text {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.text {
+  padding: 0;
+  margin: 0;
+}

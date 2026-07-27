@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  --stripe-width: 55px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      #A8D383 0,
+      #A8D383 var(--stripe-width),
+      transparent var(--stripe-width),
+      transparent calc(100% - var(--stripe-width)),
+      #A8D383 calc(100% - var(--stripe-width)),
+      #A8D383 100%
+    ),
+    linear-gradient(135deg, #FFE5EC 0%, #FCB6D0 100%);
+
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.oteviraci-doba {
+  width: 500px;
+  max-width: 100%;
+  margin: 30px auto;
+  padding: 25px;
+
+  background-color: white;
+  border: 2px solid #F48FBD;
+  border-radius: 20px;
+  box-shadow: 0 0 18px 6px rgba(215, 0, 122, 0.55);
+
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+  color: #d7007a;
+}
+
+.obrazky {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.obrazky img {
+  width: calc(50% - 6px);
+  height: 160px;
+  object-fit: cover;
+  border: 3px solid #f4b6c2;
+  border-radius: 12px;
+}
+
+.hodiny {
+  padding: 10px 25px;
+  background-color: #fff0f5;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.hodiny p {
+  margin: 0;
+  padding: 9px 0;
+  border-bottom: 1px solid #f4b6c2;
+}
+
+.hodiny p:last-child {
+  border-bottom: none;
+}
+
+.zavreno {
+  color: #d7007a;
+  font-weight: bold;
+}
+
+.tesime-se {
+  margin: 20px 0 0;
+  color: #d7007a;
+  font-weight: bold;
+}
+
+@media (max-width: 500px) {
+  .obrazky {
+    flex-direction: column;
+  }
+
+  .obrazky img {
+    width: 100%;
+  }
+}

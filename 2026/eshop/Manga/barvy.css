@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap");
+
+body {
+    background-color: rgb(173, 216, 230);
+    border-left: 10vmin solid darkblue;
+    border-right: 10vmin solid darkblue;
+}
+
+.Text {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Obrázky {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Obrázky img {
+    width: 100%;
+    display: block;aspect-ratio: 10 / 13;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.container img {
+        width: 100%;
+        height: auto;
+}

@@ -1,0 +1,232 @@
+
+body {
+   background-image: url("dirtz.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+img {
+    border: 10px solid rgb(28, 77, 28);
+    border-radius: 100px;
+}
+.header {
+      width: 100%;
+      height: 105px;
+      padding-left: 35px;
+
+      display: flex;
+      align-items: center;
+
+      background: linear-gradient(
+            90deg,
+            #20B34B 0%,
+            #21B84D 50%,
+            #20AD48 100%
+      );
+}
+
+.logo {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+}
+
+.logo img {
+      display: block;
+      width: 320px;
+      max-height: 80px;
+      object-fit: contain;
+}
+
+.navigation {
+      height: 100%;
+      margin-left: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 35px;
+}
+
+.navigation a {
+      width: 130px;
+      height: 60px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #111111;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      background-color: transparent;
+      border: 2px solid #111111;
+      border-radius: 4px;
+
+      transition: 0.2s ease;
+}
+
+.navigation a:last-child {
+      margin-right: 28px;
+}
+
+.navigation a:hover {
+      color: #20AD48;
+      background-color: #111111;
+      transform: translateY(-3px);
+}
+
+.navigation a.active {
+      color: #20AD48;
+      background-color: #111111;
+}
+
+@media (max-width: 1050px) {
+      .header {
+            height: auto;
+            padding: 20px;
+            flex-direction: column;
+            gap: 20px;
+      }
+
+      .logo img {
+            width: 280px;
+      }
+
+      .navigation {
+            width: 100%;
+            height: auto;
+            margin-left: 0;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+      }
+
+      .navigation a {
+            width: 150px;
+            height: 55px;
+      }
+
+      .navigation a:last-child {
+            margin-right: 0;
+      }
+}
+body {
+    background-color: #d0d0d0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 70%;
+    margin: 20px auto;
+background: linear-gradient(45deg, #5cdc6d, #2c993c, #0d5f18);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+title {
+    font-size: 100px;
+}
+
+div {
+        color: rgb(10, 40, 10);
+        font-size: 30px;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    h2{
+        font-size: 50px;
+    }
+    h3 {
+        font-size: 50px;
+    }
+    h4 {
+        font-size: 50px;
+    }
+    h5 {
+        font-size: 50px;
+    }
+    h6 {
+        font-size: 50px;
+    }
+
+    .logo img {
+    border: none;
+    border-radius: 0;
+}
+.footer {
+        width: 100%;
+        min-height: 130px;
+        padding: 25px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: linear-gradient(
+                90deg,
+                #20B34B 0%,
+                #21B84D 50%,
+                #20AD48 100%
+        );
+}
+
+.minecraft-link {
+        width: min(90%, 600px);
+        min-height: 65px;
+        padding: 15px 30px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #111111;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        background-color: transparent;
+        border: 3px solid #111111;
+        border-radius: 5px;
+
+        transition:
+                color 0.2s ease,
+                background-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.minecraft-link:hover {
+        color: #21B84D;
+        background-color: #111111;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        transform: translateY(-3px);
+}
+
+.minecraft-link:active {
+        transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+        .footer {
+                min-height: 110px;
+                padding: 20px;
+        }
+
+        .minecraft-link {
+                width: 100%;
+                min-height: 60px;
+                padding: 12px 20px;
+                font-size: 16px;
+        }
+}

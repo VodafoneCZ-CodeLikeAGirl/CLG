@@ -1,0 +1,138 @@
+.items > div {
+    width: 200px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(215, 0, 122, 0.35);
+
+    /* Plynulá animace */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.items > div:hover {
+    /* Mírné zvětšení a posunutí nahoru */
+    transform: scale(1.05) translateY(-5px);
+
+    /* Výraznější stín */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+}
+/* Nastavení pro všechny prvky */
+* {
+    box-sizing: border-box;
+}
+
+/* Celá stránka */
+body {
+    --stripe-width: 55px;
+
+    background:
+        linear-gradient(
+            to right,
+            #a8d383 0,
+            #a8d383 var(--stripe-width),
+            transparent var(--stripe-width),
+            transparent calc(100% - var(--stripe-width)),
+            #a8d383 calc(100% - var(--stripe-width)),
+            #a8d383 100%
+        ),
+        linear-gradient(135deg, #ffe5ec 0%, #fcb6d0 100%);
+
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-align: center;
+}
+
+/* Hlavní nadpis */
+h1 {
+    margin-top: 30px;
+    color: #d7007a;
+}
+
+/* Navštívené odkazy */
+a:visited {
+    color: black !important;
+}
+
+/* Sociální ikony */
+.social-icons {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    color: #d7007a;
+}
+
+/* Seznam nápojů */
+.items {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    justify-content: center;
+    gap: 30px;
+    margin: 30px auto;
+}
+
+/* Jednotlivé kartičky */
+.items > div {
+    width: 200px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Názvy nápojů */
+.items h3 {
+    margin: 0 0 15px;
+    color: #d7007a;
+}
+
+/* Obrázky nápojů */
+.items img {
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+/* Popisky nápojů */
+.description {
+    margin: 15px 0 10px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+/* Ceny nápojů */
+.price {
+    margin: 10px 0 0;
+    color: #d7007a;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Tablet – dvě položky na řádku */
+@media (max-width: 750px) {
+    .items {
+        grid-template-columns: repeat(2, 200px);
+    }
+}
+
+/* Mobil – jedna položka na řádku */
+@media (max-width: 500px) {
+    .items {
+        grid-template-columns: 200px;
+    }
+}
+.items > div {
+    border: 2px solid #f48fbd;
+    box-shadow: 0 0 18px 6px rgba(215, 0, 122, 0.55);
+}

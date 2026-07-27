@@ -1,0 +1,68 @@
+
+
+.body {
+    display: flex;
+    flex-direction: column;   /* obsah bude pod sebou */
+    justify-content: center;  /* svislé centrování */
+    align-items: center;       /* vodorovné centrování */
+    min-height: 100vh;         /* aby se centrovalo podle celé výšky okna */
+    color: darkblue;
+    background-color: lightblue; 
+   font-family: "comic sans ms",cursive, sans-serif; /* Nastavení fontu pro celou stránku */
+   
+}
+
+img {
+    max-width: auto;
+    height: 150px;
+    padding: 5px 5px 5px 5px;
+    align-items: center;
+    border: 2px solid  rgb(2, 64, 85);
+  
+}
+
+.druhzvirete {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 15px 15px 15px 15px;
+    background-color: rgb(133, 189, 208); 
+    margin-bottom: 15px;
+}
+
+.popis {
+   
+    justify-content: flex-start;
+    margin-top: 15px;
+    justify-content: end;
+    background-color: rgb(133, 189, 208); /* odmazat před prezentací */
+    padding: 5px 5px 5px 5px;
+    max-width: 60%;
+}
+
+.text {
+     line-height: 1.6; 
+
+}
+
+.obrazek {
+    display: flex;
+    justify-content: center;   /* vodorovné zarovnání doprostřed */
+    align-items: center;        /* svislé zarovnání doprostřed */
+    gap: 10px;                  /* volitelné – mezera mezi obrázky */
+    background-color: rgb(133, 189, 208); /* odmazat před prezentací */
+    margin-top: 15px;
+     
+}
+
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(2, 64, 85); 
+    border: 2px solid white;
+    color: white;
+    width: 50%;
+}

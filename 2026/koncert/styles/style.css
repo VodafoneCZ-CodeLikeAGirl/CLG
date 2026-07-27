@@ -1,0 +1,383 @@
+ * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            overflow-x: hidden;
+
+            color: white;
+            font-family: "DM Sans", Arial, sans-serif;
+
+            background:
+                radial-gradient(circle at 10% 15%, #ff2d91 0, transparent 38%),
+                radial-gradient(circle at 88% 12%, #19dccf 0, transparent 38%),
+                radial-gradient(circle at 92% 85%, #ff7e24 0, transparent 42%),
+                radial-gradient(circle at 48% 95%, #e8232d 0, transparent 40%),
+                radial-gradient(circle at 12% 82%, #8036f2 0, transparent 42%),
+                linear-gradient(
+                    135deg,
+                    #ff2d91,
+                    #e8232d,
+                    #ff7e24,
+                    #19dccf,
+                    #8036f2
+                );
+
+            background-attachment: fixed;
+        }
+
+        /* Skrytá knihovna s logem */
+        .svg-library {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        /* Dekorace na pozadí */
+        .decorations {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .decor {
+            position: absolute;
+            animation: floating 5s ease-in-out infinite;
+        }
+
+        /* Původní růžovo-fialové logo */
+        .logo {
+            width: clamp(220px, 20vw, 330px);
+            height: auto;
+            filter: drop-shadow(0 15px 20px rgba(48, 10, 75, 0.4));
+        }
+
+        .logo-left {
+            top: 1%;
+            left: 1%;
+            transform: rotate(-5deg);
+        }
+
+        .logo-right {
+            right: 1%;
+            bottom: 1%;
+            transform: rotate(5deg);
+            animation-delay: -2s;
+        }
+
+        /* Skupiny hudebních not */
+        .notes {
+            width: 190px;
+            color: rgba(255, 255, 255, 0.9);
+            font-family: Georgia, serif;
+            font-size: clamp(38px, 4vw, 62px);
+            line-height: 1.55;
+            letter-spacing: 18px;
+            text-align: center;
+
+            text-shadow:
+                0 0 12px rgba(255, 255, 255, 0.65),
+                0 8px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .notes-left {
+            top: 24%;
+            left: 4%;
+            transform: rotate(-6deg);
+        }
+
+        .notes-right {
+            right: 4%;
+            bottom: 18%;
+            transform: rotate(6deg);
+            animation-delay: -2.5s;
+        }
+
+        /* Mikrofony */
+        .microphone {
+            display: grid;
+            place-items: center;
+
+            width: clamp(115px, 10vw, 165px);
+            height: clamp(115px, 10vw, 165px);
+            font-size: clamp(75px, 8vw, 125px);
+
+            background: rgba(255, 255, 255, 0.17);
+            border: 2px solid rgba(255, 255, 255, 0.45);
+            border-radius: 50%;
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.28);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .mic-left {
+            left: 4%;
+            bottom: 5%;
+            transform: rotate(-14deg);
+        }
+
+        .mic-right {
+            top: 4%;
+            right: 4%;
+            transform: rotate(14deg);
+            animation-delay: -3s;
+        }
+
+        /* Černé kytary s hvězdami */
+        .guitar {
+            display: grid;
+            place-items: center;
+
+            width: clamp(160px, 14vw, 230px);
+            height: clamp(210px, 18vw, 300px);
+        }
+
+        .guitar span {
+            font-size: clamp(125px, 13vw, 200px);
+
+            filter:
+                grayscale(1)
+                brightness(0)
+                drop-shadow(0 0 5px white)
+                drop-shadow(0 12px 15px rgba(0, 0, 0, 0.4));
+        }
+
+        .guitar::before,
+        .guitar::after {
+            position: absolute;
+            color: white;
+            font-size: 34px;
+            letter-spacing: 30px;
+
+            text-shadow: 0 0 12px white;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        .guitar::before {
+            content: "★ ✦";
+            top: 5px;
+            left: 5px;
+        }
+
+        .guitar::after {
+            content: "✧ ★ ✦";
+            right: 0;
+            bottom: 10px;
+            animation-delay: -1s;
+        }
+
+        .guitar-left {
+            top: 38%;
+            left: 1%;
+            transform: rotate(-12deg);
+        }
+
+        /* Pravá kytara je více nahoře */
+        .guitar-right {
+            top: 18%;
+            right: 1%;
+            transform: rotate(12deg);
+            animation-delay: -2s;
+        }
+
+        @keyframes floating {
+            50% {
+                translate: 0 -15px;
+            }
+        }
+
+        @keyframes twinkle {
+            50% {
+                opacity: 0.4;
+                scale: 0.8;
+            }
+        }
+
+        /* Hlavní kontaktní karta */
+        .contact-card {
+            position: relative;
+            z-index: 2;
+
+            width: 100%;
+            max-width: 700px;
+            padding: 50px;
+            text-align: center;
+
+            background: rgba(38, 15, 50, 0.52);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 28px;
+
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.32);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+
+            font-family: "Lobster", cursive;
+            font-size: clamp(52px, 9vw, 82px);
+            font-weight: 400;
+            line-height: 1.05;
+
+            text-shadow:
+                0 4px 0 rgba(102, 28, 120, 0.38),
+                0 8px 20px rgba(0, 0, 0, 0.38);
+        }
+
+        .subtitle {
+            margin-bottom: 38px;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .contacts {
+            display: grid;
+            gap: 15px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 17px 20px;
+
+            color: white;
+            text-align: left;
+            text-decoration: none;
+
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 16px;
+
+            transition: 0.25s;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.28);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+        }
+
+        .contact-link:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 4px;
+        }
+
+        .icon {
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+
+            width: 50px;
+            height: 50px;
+
+            font-size: 24px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.22);
+        }
+
+        .contact-text {
+            display: grid;
+            gap: 4px;
+            min-width: 0;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-text strong {
+            font-size: 17px;
+        }
+
+        .contact-text span {
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 15px;
+        }
+
+        footer {
+            margin-top: 32px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 14px;
+        }
+
+        /* Menší obrazovky */
+        @media (max-width: 1150px) {
+            .decorations {
+                opacity: 0.25;
+            }
+
+            .notes,
+            .guitar-left,
+            .mic-right,
+            .logo-right {
+                display: none;
+            }
+        }
+
+        /* Mobilní zařízení */
+        @media (max-width: 550px) {
+            body {
+                padding: 20px 14px;
+            }
+
+            .contact-card {
+                padding: 34px 18px;
+            }
+
+            h1 {
+                font-size: clamp(45px, 14vw, 62px);
+            }
+
+            .subtitle {
+                margin-bottom: 28px;
+                font-size: 16px;
+            }
+
+            .contact-link {
+                gap: 13px;
+                padding: 14px;
+            }
+
+            .logo-left {
+                top: 3px;
+                left: 3px;
+                width: 130px;
+            }
+
+            .guitar-right {
+                top: 5%;
+                right: -30px;
+                width: 100px;
+            }
+
+            .guitar-right span {
+                font-size: 75px;
+            }
+
+            .mic-left {
+                left: -20px;
+                bottom: 5px;
+                width: 75px;
+                height: 75px;
+                font-size: 48px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .decor,
+            .guitar::before,
+            .guitar::after {
+                animation: none;
+            }
+        }

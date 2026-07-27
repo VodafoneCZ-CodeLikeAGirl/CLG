@@ -1,0 +1,252 @@
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  color: white;
+  background-color: #080b14;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ÚVODNÍ STRÁNKA */
+
+.uvod {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+
+  background:
+    linear-gradient(rgba(3, 7, 18, 0.45), rgba(3, 7, 18, 0.92)),
+    url("./obrazky/auto_budoucnosti.jpg") center / cover;
+}
+.uvodni-obsah h1 {
+  margin: 0;
+  color: #00e5ff;
+  font-size: 80px;
+  letter-spacing: 12px;
+}
+
+.uvodni-obsah p {
+  margin: 20px 0 35px;
+  color: #d5dbea;
+  font-size: 22px;
+}
+
+.skupiny {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.tlacitko {
+  display: inline-block;
+  min-width: 190px;
+  padding: 16px 25px;
+  border: 2px solid #00eaff;
+  border-radius: 30px;
+  color: #00b7ff;
+  background-color: #000000;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.tlacitko:hover {
+  color: #00d9ff;
+  background-color: transparent;
+  transform: translateY(-4px);
+}
+
+/* HLAVIČKA */
+
+.hlavicka {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 5%;
+  border-bottom: 1px solid #26334d;
+  background-color: #0c111f;
+}
+
+.logo {
+  color: #00e5ff;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+.zpet:hover {
+  color: #00e5ff;
+}
+
+/* OBSAH STRÁNEK */
+
+.obsah {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 70px 0;
+}
+
+.nadpis {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.nadpis h1 {
+  margin-bottom: 10px;
+  font-size: 48px;
+}
+
+.nadpis p {
+  color: #aab5c8;
+  font-size: 18px;
+}
+
+.seznam-aut {
+  display: grid;
+  gap: 35px;
+}
+
+/* KARTA AUTA */
+
+.auto {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  overflow: hidden;
+  border: 1px solid #26334d;
+  border-radius: 20px;
+  background-color: #111827;
+  transition: 0.3s;
+}
+
+.auto:hover {
+  border-color: #00e5ff;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 229, 255, 0.1);
+}
+
+.auto img {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  object-fit: cover;
+}
+
+.popis {
+  padding: 35px;
+}
+
+.popis h2 {
+  margin-top: 0;
+  color: #00e5ff;
+  font-size: 32px;
+}
+
+.popis p,
+.popis li {
+  color: #bdc6d6;
+  line-height: 1.7;
+}
+
+.popis ul {
+  padding-left: 20px;
+}
+
+.popis .cena {
+  margin-top: 25px;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* MOBILNÍ ZOBRAZENÍ */
+
+@media (max-width: 750px) {
+  .uvodni-obsah h1 {
+    font-size: 44px;
+    letter-spacing: 6px;
+  }
+
+  .uvodni-obsah p {
+    font-size: 18px;
+  }
+
+  .skupiny {
+    flex-direction: column;
+  }
+
+  .auto {
+    grid-template-columns: 1fr;
+  }
+
+  .auto img {
+    height: 250px;
+    min-height: auto;
+  }
+
+  .popis {
+    padding: 25px;
+  }
+
+  .nadpis h1 {
+    font-size: 36px;
+  }
+
+  .hlavicka {
+    gap: 15px;
+  }
+}
+
+.mainInfo {
+  font-family: "Orbitron", sans-serif;
+}
+/* O nás */
+#onas {
+    padding: 30px 30px;
+    color: #c1c3c4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Orbitron", sans-serif;
+    font-size: 24px;
+}
+
+.onas-obsah {
+    max-width: 800px;
+    text-align: center;
+}
+
+.onas-obsah h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.onas-obsah p {
+    font-size: 20px;
+    line-height: 1.7;
+    color: inherit
+}
+
+
+#kontakty {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 22px;
+}

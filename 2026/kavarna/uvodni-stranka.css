@@ -1,0 +1,291 @@
+/* Nastavení všech prvků */
+* {
+  box-sizing: border-box;
+}
+
+/* Celá stránka */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: #333333;
+  background:
+    linear-gradient(135deg, #ffe5ec 0%, #fcb6d0 100%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Odkazy */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Horní zelená lišta */
+.horni-lista {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #a8d383;
+  border-bottom: 3px solid #8eba68;
+  box-shadow: 0 4px 15px rgba(70, 105, 45, 0.25);
+}
+
+/* Obsah uvnitř lišty */
+.navigace {
+  width: 90%;
+  max-width: 1200px;
+  min-height: 80px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* Název kavárny vlevo */
+.logo {
+  flex-shrink: 0;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 29px;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(50, 80, 30, 0.25);
+}
+
+/* Seznam odkazů */
+.navigace ul {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Odkazy v navigaci */
+.navigace nav a {
+  position: relative;
+  display: block;
+  padding: 28px 0;
+
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Odkaz po najetí myší */
+.navigace nav a:hover {
+  color: #d7007a;
+  transform: translateY(-2px);
+}
+
+/* Růžová čára pod odkazem */
+.navigace nav a::after {
+  position: absolute;
+  right: 50%;
+  bottom: 18px;
+  left: 50%;
+
+  height: 3px;
+  background-color: #d7007a;
+  border-radius: 5px;
+
+  content: "";
+
+  transition:
+    right 0.25s ease,
+    left 0.25s ease;
+}
+
+.navigace nav a:hover::after {
+  right: 0;
+  left: 0;
+}
+
+/* Úvodní sekce pod navigací */
+.uvodni-sekce {
+  min-height: calc(100vh - 83px);
+  padding: 70px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+/* Obal úvodního textu */
+.uvodni-obsah {
+  width: 100%;
+  max-width: 800px;
+  padding: 55px 45px;
+
+  background-color: rgba(255, 255, 255, 0.82);
+  border: 2px solid #f48fbd;
+  border-radius: 30px;
+
+  box-shadow:
+    0 15px 35px rgba(215, 0, 122, 0.22),
+    0 0 22px rgba(244, 143, 189, 0.45);
+}
+
+/* Malý text nad nadpisem */
+.maly-nadpis {
+  margin: 0 0 10px;
+  color: #78a554;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+/* Hlavní nadpis */
+h1 {
+  margin: 0;
+  color: #d7007a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(55px, 9vw, 90px);
+  font-weight: normal;
+  line-height: 1.1;
+}
+
+/* Ozdobná čára */
+.cara {
+  width: 75px;
+  height: 4px;
+  margin: 25px auto;
+  background-color: #a8d383;
+  border-radius: 10px;
+}
+
+/* Text pod nadpisem */
+.uvodni-text {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #684456;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+/* Obal tlačítek */
+.tlacitka {
+  margin-top: 32px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Společný vzhled tlačítek */
+.tlacitko {
+  display: inline-block;
+  padding: 13px 25px;
+
+  border: 2px solid #d7007a;
+  border-radius: 25px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Růžové tlačítko */
+.hlavni-tlacitko {
+  color: #ffffff;
+  background-color: #d7007a;
+}
+
+.hlavni-tlacitko:hover {
+  background-color: #ac0062;
+  transform: translateY(-3px);
+}
+
+/* Bílé tlačítko */
+.vedlejsi-tlacitko {
+  color: #d7007a;
+  background-color: #ffffff;
+}
+
+.vedlejsi-tlacitko:hover {
+  color: #ffffff;
+  background-color: #d7007a;
+  transform: translateY(-3px);
+}
+
+/* Zobrazení na tabletu a mobilu */
+@media (max-width: 850px) {
+  .navigace {
+    padding: 15px 0;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .navigace ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px 20px;
+  }
+
+  .navigace nav a {
+    padding: 8px 0 12px;
+  }
+
+  .navigace nav a::after {
+    bottom: 5px;
+  }
+
+  .uvodni-sekce {
+    min-height: calc(100vh - 135px);
+  }
+}
+
+/* Zobrazení na malém mobilu */
+@media (max-width: 550px) {
+  .logo {
+    font-size: 25px;
+  }
+
+  .navigace nav a {
+    font-size: 14px;
+  }
+
+  .uvodni-sekce {
+    padding: 45px 15px;
+  }
+
+  .uvodni-obsah {
+    padding: 40px 22px;
+    border-radius: 22px;
+  }
+
+  h1 {
+    font-size: 52px;
+  }
+
+  .maly-nadpis {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .uvodni-text {
+    font-size: 17px;
+  }
+
+  .tlacitka {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,103 @@
+
+  /* Započítá padding a rámečky do šířky prvků */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  --stripe-width: 55px;
+
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      #A8D383 0,
+      #A8D383 var(--stripe-width),
+      transparent var(--stripe-width),
+      transparent calc(100% - var(--stripe-width)),
+      #A8D383 calc(100% - var(--stripe-width)),
+      #A8D383 100%
+    ),
+    linear-gradient(135deg, #FFE5EC 0%, #FCB6D0 100%);
+
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+
+.kontakty {
+  width: 600px;
+  max-width: 95%;
+  padding: 28px;
+
+  background-color: white;
+  border: 2px solid #F48FBD;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12), 0 0 18px 6px rgba(215, 0, 122, 0.25);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.kontakty:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.18), 0 0 26px 8px rgba(215,0,122,0.35);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #D7007A;
+  text-align: center;
+}
+
+.obrazky {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.obrazky img {
+  width: calc(50% - 5px);
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.kontakty p {
+  margin: 12px 0;
+  color: #444;
+  font-size: 16px;
+}
+
+.kontakty a {
+  color: #D7007A;
+  text-decoration: none;
+}
+
+.kontakty a:hover {
+  text-decoration: underline;
+}
+
+/* Úprava pro mobilní telefony */
+@media (max-width: 500px) {
+  body {
+    /* Na malém displeji zabrání oříznutí vysokého rámečku */
+    align-items: flex-start;
+  }
+
+  .obrazky {
+    flex-direction: column;
+  }
+
+  .obrazky img {
+    width: 100%;
+  }
+}

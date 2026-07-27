@@ -1,0 +1,205 @@
+/* Nastavení všech prvků */
+* {
+  box-sizing: border-box;
+}
+
+/* Celá stránka */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Celá stránka */
+body {
+  /* Šířka zelených pruhů */
+  --sirka-pruhu: 55px;
+  background-color: rgba(255, 255, 255, 0.65);;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Zelené pruhy po stranách a růžové pozadí uprostřed */
+  background:
+    linear-gradient(
+      to right,
+      #a8d383 0,
+      #a8d383 var(--sirka-pruhu),
+      transparent var(--sirka-pruhu),
+      transparent calc(100% - var(--sirka-pruhu)),
+      #a8d383 calc(100% - var(--sirka-pruhu)),
+      #a8d383 100%
+    ),
+    linear-gradient(
+      135deg,
+      #ffe5ec 0%,
+      #fcb6d0 100%
+    );
+
+/* Horní část stránky */
+.uvod {
+  padding: 55px 20px 25px;
+}
+
+/* Hlavní nadpis */
+h1 {
+  display: inline-block;
+  margin: 0 auto 18px;
+  padding: 12px 35px;
+  color: #d7007a;
+  background-color: #ffffff;
+  border: 2px solid #f48fbd;
+  border-radius: 25px;
+  box-shadow: 0 6px 18px rgba(215, 0, 122, 0.2);
+  font-size: 50px;
+  line-height: 1.2;
+}
+
+/* Text pod hlavním nadpisem */
+.uvodni-text {
+  margin: 0;
+  color: #7e345e;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Hlavní obsah stránky */
+main {
+  width: 90%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 35px 0 80px;
+}
+
+/* Rozložení – tři karty vedle sebe */
+.psi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 300px));
+  align-items: stretch;
+  justify-content: center;
+  gap: 35px;
+}
+
+/* Jedna karta pejska */
+.pes {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 2px solid #f48fbd;
+  border-radius: 22px;
+
+  /* Růžový stín kolem celé karty */
+  box-shadow:
+    0 10px 25px rgba(222, 16, 133, 0.838),
+    0 0 16px rgba(240, 57, 139, 0.45);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Karta při najetí myší */
+.pes:hover {
+  border-color: #d7007a;
+  transform: translateY(-8px) scale(1.02);
+
+  /* Výraznější růžový stín */
+  box-shadow:
+    0 18px 35px rgba(215, 0, 122, 0.35),
+    0 0 25px rgba(244, 143, 189, 0.75);
+}
+
+/* Obrázky pejsků */
+.pes img {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  object-position: center;
+  background-color: #fff5f9;
+  border-bottom: 2px solid #f8b4d0;
+  transition: transform 0.4s ease;
+}
+
+/* Zvětšení obrázku při najetí */
+.pes:hover img {
+  transform: scale(1.05);
+}
+
+/* Textová část karty */
+.informace {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 22px 28px;
+}
+
+/* Jméno pejska */
+.informace h2 {
+  margin: 0 0 15px;
+  color: #d7007a;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+/* Růžová čára pod jménem */
+.informace h2::after {
+  display: block;
+  width: 45px;
+  height: 3px;
+  margin: 11px auto 0;
+  background-color: #f48fbd;
+  border-radius: 5px;
+  content: "";
+}
+
+/* Popis pejska */
+.informace p {
+  margin: 0;
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Tablet – dvě karty vedle sebe */
+@media (max-width: 750px) {
+  .psi-grid {
+    grid-template-columns: repeat(2, minmax(0, 300px));
+  }
+}
+
+/* Mobil – jedna karta na řádku */
+@media (max-width: 500px) {
+  .uvod {
+    padding: 40px 15px 20px;
+  }
+
+  h1 {
+    padding: 10px 25px;
+    font-size: 40px;
+  }
+
+  .uvodni-text {
+    font-size: 16px;
+  }
+
+  main {
+    width: 88%;
+    padding-top: 25px;
+  }
+
+  .psi-grid {
+    grid-template-columns: minmax(0, 300px);
+    gap: 28px;
+  }
+
+  .pes img {
+    height: 250px;
+  }
+}
